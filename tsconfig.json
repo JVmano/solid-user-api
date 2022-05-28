@@ -6,7 +6,8 @@
     "strict": false,
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "outDir": "./dist/"
   },
   "include": ["src/**/*.ts"]
 }
