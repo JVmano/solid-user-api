@@ -6,7 +6,10 @@
   "author": "JVmano <jdefreitasmelo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "eslint src/**/*.ts && tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts"
+    "dev": "eslint src/**/*.ts && tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
+    "clean": "tsc --build --clean",
+    "build": "tsc --build --clean && tsc --build",
+    "build:execute": "node dist/server.js"
   },
   "dependencies": {
     "express": "^4.18.1",

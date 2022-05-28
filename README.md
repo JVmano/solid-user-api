@@ -13,9 +13,9 @@ I made this repo for typescript and clean architecture study.
 yarn install
 ```
 
-3. Execute the start command
+3. Execute the dev start command
 ```
-yarn start
+yarn dev
 ```
 
 4. Goto to file `src/providers/implementations/MailTrapMailProvider.ts` and change the following variables to your MailTrap access to see the incoming emails:
@@ -42,6 +42,21 @@ constructor () {
 ```
 
 6. Enjoy
+
+## Build
+1. Execute the build script:
+```
+yarn build
+```
+
+2. The builded files gonna be in **dist** folder.
+
+3. Execute the `server.js` in dist folder with:
+```
+yarn build:execute
+```
+
+4. Enjoy
 
 ## Found a bug? 🐛
 Create a issue in the repo or simply create a pull request with the solution and a description about it (I'll thank a lot)
