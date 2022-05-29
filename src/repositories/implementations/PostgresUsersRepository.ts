@@ -3,15 +3,23 @@
 import { User } from '../../entities/User'
 import { IUsersRepository } from '../IUsersRepository'
 
+let users: User[] = []
+
 export class PostgresUsersRepository implements IUsersRepository {
-  private users: User[] = [] // * save users in local machine
+  // private users: User[] = [] // * save users in local machine
 
   async findByEmail (email: string): Promise<User> {
-    const user = this.users.find((userData) => userData.email === email)
+    const user = users.find((userData) => userData.email === email)
     return user
   }
 
   async save (user: User): Promise<void> {
-    this.users.push(user)
+    users.push(user)
+  }
+
+  async delete (email: string): Promise<void> {
+    const storageUsers = users.find((userData) => userData.email !== email)
+    users = []
+    users.push(storageUsers)
   }
 }
