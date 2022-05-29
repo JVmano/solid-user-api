@@ -5,7 +5,7 @@ Simples user API with register manipulation and email system using MailTrap made
 ## Why? ✳️
 I made this repo for typescript and clean architecture study.
 
-## How to use 👀
+## How to install 👀
 1. Clone the project
 
 2. Install Packages
@@ -13,12 +13,7 @@ I made this repo for typescript and clean architecture study.
 yarn install
 ```
 
-3. Execute the dev start command
-```
-yarn dev
-```
-
-4. Goto to file `src/providers/implementations/MailTrapMailProvider.ts` and change the following variables to your MailTrap access to see the incoming emails:
+3. Goto to file `src/providers/implementations/MailTrapMailProvider.ts` and change the following variables to your MailTrap access to see the incoming emails:
 ```
 constructor () {
   this.transporter = nodemailer.createTransport({
@@ -32,7 +27,15 @@ constructor () {
 }
 ```
 
-5. Send a request to `http://localhost:3333/users` with the following JSON format data:
+4. Execute the dev start command
+```
+yarn dev
+```
+
+4. The server will be running on port 3333
+
+## How to Use 🕹️
+1. Send a POST request to `http://localhost:3333/users` with the following JSON format data:
 ```
 {
 	"name": "YOURNAME",
@@ -41,7 +44,12 @@ constructor () {
 }
 ```
 
-6. Enjoy
+2. Send a DELETE request to `http://localhost:3333/users` with the following JSON format data to delete the created user:
+```
+{
+	"email": "YOUREMAIL"
+}
+```
 
 ## Build
 1. Execute the build script:

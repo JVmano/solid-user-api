@@ -3,11 +3,9 @@
 import { User } from '../../entities/User'
 import { IUsersRepository } from '../IUsersRepository'
 
-let users: User[] = []
+let users: User[] = [] // * save users in local machine
 
 export class PostgresUsersRepository implements IUsersRepository {
-  // private users: User[] = [] // * save users in local machine
-
   async findByEmail (email: string): Promise<User> {
     const user = users.find((userData) => userData.email === email)
     return user
